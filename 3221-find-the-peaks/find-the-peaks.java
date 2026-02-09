@@ -1,12 +1,14 @@
 class Solution {
-    public List<Integer> findPeaks(int[] mountain) {
-        List<Integer> arlist = new ArrayList<>();
-
-        for(int i = 1 ; i < mountain.length - 1; i++){
-            if(mountain[i-1] < mountain[i] && mountain[i] > mountain[i + 1]){
-                arlist.add(i);
+    public List<Integer> findPeaks(int[] mo) {
+        List<Integer> res=new ArrayList<>();
+        for(int i=1;i<mo.length-1;i++){
+            int n=mo[i-1];
+            int m=mo[i];
+            int o=mo[i+1];
+            if(m>n&&o<m){
+                res.add(i);
             }
         }
-        return arlist;
+        return res;
     }
 }
